@@ -32,9 +32,7 @@ jobs:
       # 4. Run Smoke Tests
       - name: Run smoke tests
         run: |
-          pytest -m smoke -n auto \
-          --html=reports/smoke_report.html \
-          --self-contained-html
+          pytest -m "smoke or api" -n auto --html=reports/report.html --self-contained-html
 
       # 5. Upload HTML report
       - name: Upload HTML report
