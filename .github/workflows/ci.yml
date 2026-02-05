@@ -29,10 +29,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. Run Smoke Tests
-      - name: Run smoke tests
+      # 4. Run Smoke Tests and API Tests
+      - name: Run api and smoke tests
         run: |
-          pytest -m "smoke or api" -n auto --html=reports/report.html --self-contained-html
+          pytest -m api -n auto --html=reports/report.html --self-contained-html
+          pytest -m smoke -n auto --html=reports/report.html --self-contained-html
 
       # 5. Upload HTML report
       - name: Upload HTML report
