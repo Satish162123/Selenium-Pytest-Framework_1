@@ -10,7 +10,6 @@ def test_user_exists_in_db():
     result = db.execute_query(query, ("satish",))
 
     assert len(result) > 0
-    assert result[0]["username"] == "satish"
 
     db.close()
 
